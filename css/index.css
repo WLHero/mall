@@ -1,0 +1,40 @@
+.loginCon{position: fixed; height: 100%; width: 100%; padding: 0 0.28rem; background: #d45250; top: 0; left: 0; padding-top: 3.07rem;}
+.loginCon .login_line{ background: #fff; padding-left: 0.73rem; position: relative;} 
+.loginCon .login_line1{ background:#fff url(../images/login_icon.png) 0.23rem center no-repeat; background-size: 0.29rem;}
+.loginCon .login_line2{ background:#fff url(../images/pwd_icon.png) 0.23rem center no-repeat; background-size: 0.29rem; border-bottom: 0;}
+.loginCon .login_input{height: 0.84rem; display: block; width: 100%; border:0; border-bottom: 1px #e1e1e1 solid; padding-right: 0.57rem;}
+.login_submit{width: 100%; display: block; height: 0.8rem;  background: #b4b4b4; color: #fff; border:0; border-radius: 10px;}
+.login_submit.active{background: #e20f0c}
+.loginCon .login_line3{background: none; padding-left: 0; margin-top: 0.27rem;}
+.loginCon .login_line3 .login_submit{border: 0;}
+.loginCon .ifLookPwd{width: 0.75rem; height: 100%; position: absolute; right: 0; top: 0; background: url(../images/notlookPwd_icon.png) center center no-repeat; background-size: 0.37rem;}
+.loginCon .ifLookPwd.active{background: url(../images/lookPwd.png) center center no-repeat; background-size: 0.37rem;}
+
+
+
+.fix_nav{position: fixed; bottom: 0; box-shadow: 0 0 5px #dbdbdb;left: 0; width: 100%; z-index: 1000; height: 1rem; background: #fff;}
+.fix_nav .fix_nav_text{color: #171717; margin-top: 0.04rem;}
+.fix_nav a{width: 20%; float:left; text-align: center; display: block;}
+.fix_nav a.active .fix_nav_text{color: #f75a47;}
+.fix_nav .fix_icon{width: 0.4rem; height: 0.4rem; margin: 0 auto; position: relative;}
+.fix_nav .round{}
+.fix_nav .a1 .fix_icon{background: url(../images/fix_nav_1.png); background-size: cover;}
+.fix_nav .a2 .fix_icon{background: url(../images/fix_nav_2.png); background-size: cover;}
+.fix_nav .a3 .fix_icon{background: url(../images/fix_nav_3.png); background-size: cover;}
+.fix_nav .a4 .fix_icon{background: url(../images/fix_nav_4.png); background-size: cover;}
+.fix_nav .a5 .fix_icon{background: url(../images/fix_nav_5.png); background-size: cover;}
+.fix_nav .a1.active .fix_icon{background:url(../images/fix_nav_1s.png); background-size: cover;}
+.fix_nav .a2.active .fix_icon{background:url(../images/fix_nav_2s.png); background-size: cover;}
+.fix_nav .a3.active .fix_icon{background:url(../images/fix_nav_3s.png); background-size: cover;}
+.fix_nav .a4.active .fix_icon{background:url(../images/fix_nav_4s.png); background-size: cover;}
+.fix_nav .a5.active .fix_icon{background:url(../images/fix_nav_5s.png); background-size: cover;}
+
+
+
+.h26l26{height: 0.26rem; line-height: 0.26rem; overflow: hidden;}
+.h30l30{height: 0.30rem; line-height: 0.30rem; overflow: hidden;}
+.l30{line-height: 0.3rem;}
+.l26{line-height: 0.26rem;}
+.mt16{margin-top: 0.16rem;}
+.c000{color: #000;}
+.commonBorder{height: 0.16rem;background: #f8f8f8;}

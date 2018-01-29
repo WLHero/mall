@@ -1,0 +1,98 @@
+<!doctype html>
+<html data-dpr="1">
+<meta charset="utf-8">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<title>商城管理</title>
+</head>
+<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="./css/public.css">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<body>
+
+	<div class="loginCon">
+		<form action="" width="100%">
+			<div class="login_line login_line1">
+				<input type="text" class="login_input login_inputSR login_name z30" placeholder="店铺名称">
+			</div>
+			<div class="login_line login_line2">
+				<input type="password" class="login_input login_inputSR login_pwd z30" placeholder="密码">
+				<a href="javascript:void(0)" class="ifLookPwd" id="ifLookPwd" data-check="yes"></a>
+			</div>
+			<div class="login_line login_line3">
+				<input type="submit" class="login_input login_submit z30" value="登录">
+			</div>
+		</form>
+	</div>
+
+<!-- 	<div class="fix_nav clearfix">
+		<div class="mid_table">
+			<div class="mid_cell">
+				<a href="" class="a1 active">
+					<p class="fix_icon"></p>
+					<p class="fix_nav_text z20">首页</p>
+				</a>
+				<a href="" class="a2">
+					<p class="fix_icon"></p>
+					<p class="fix_nav_text z20">我的二维码</p>
+				</a>
+				<a href="" class="a3">
+					<p class="fix_icon"></p>
+					<p class="fix_nav_text z20">查看广告</p>
+				</a>
+				<a href="" class="a4">
+					<p class="fix_icon"></p>
+					<p class="fix_nav_text z20">购物车</p>
+				</a>
+				<a href="" class="a5">
+					<p class="fix_icon"></p>
+					<p class="fix_nav_text z20">个人中心</p>
+				</a>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div> -->
+
+	
+
+
+
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/jquery.rollGallery_yeso.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#ifLookPwd').on('click',function() {
+		var dataCheck = $(this).attr('data-check');
+		$(this).toggleClass('active')
+		if(dataCheck == "yes") {
+			$('.login_pwd').attr("type","text");
+			$(this).attr('data-check',"no");
+		} else {
+			$('.login_pwd').attr("type","password");
+			$(this).attr('data-check',"yes");
+		}
+	})
+
+	$('.login_inputSR').keyup(function() {
+		var isSub = false;
+		$('.login_inputSR').each(function() {
+			if($(this).val() != null && $(this).val() != "") {
+				$('.login_submit').addClass('active')
+			} else {
+				$('.login_submit').removeClass('active')
+				return false;
+			}
+		})
+
+
+	})
+
+})
+</script>
+
+</html>
