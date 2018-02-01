@@ -1,0 +1,77 @@
+<!doctype html>
+<html data-dpr="1">
+<meta charset="utf-8">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<title>商城管理</title>
+</head>
+<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="./css/public.css">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<body>
+	<!-- 公用头部 -->
+	<div class="commonHeader">
+		<a href="javascript:history.back(-1)" class="back_last"></a>
+		<h2 class="z34">编辑相册</h2>
+		<a href="javascript:void(0)" class="z28 commonHeaderR">编辑</a>
+	</div>
+	<div class="commonHeaderPlace"></div>
+	<!-- 公用头部 -->
+
+	<div class="minWinH" style="background: #f7f7f7;">
+		<h4 class="z26 groundingH4">上传商品相册</h4>
+		<div class="proAlbum editProAlbum">
+			<ul class="clearfix" id="proAlbumUl">
+				<li>
+					<a href="javascript:void(0)" class="backLazys" style="background-image: url(./images/mainImg.png);"></a>
+				</li>
+				<li id="fileUp">
+					<a href="javascript:void(0)" class="" style="">
+						<input type="file" accept="image/*" class="absolute fileCam">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+
+
+
+
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var $proAlbumUl = $('#proAlbumUl');
+	$(".fileCam").on({
+		"change":function(e) {
+			if($proAlbumUl.find('li').length < 6) {
+				var file = e.target.files[0];
+				if (window.FileReader) {    
+		            var reader = new FileReader();    
+		            reader.readAsDataURL(file);  
+		            //监听文件读取结束后事件    
+		          reader.onloadend = function (e) {
+					var html = "";
+					html += "<li><a href='javascript:void(0)' class='backLazys' style='background-image: url("+e.target.result+");''></a></li>";
+					$('#fileUp').before(html);
+		          };    
+		       } 
+			} 
+		},
+		"click":function() {
+			if($proAlbumUl.find('li').length > 5) {
+				alert("图片最多传5张");
+				return false;
+			}
+		}
+	})
+})
+</script>
+
+</html>

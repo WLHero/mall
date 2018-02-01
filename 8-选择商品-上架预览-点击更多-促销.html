@@ -1,0 +1,115 @@
+<!doctype html>
+<html data-dpr="1">
+<meta charset="utf-8">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<title>商城管理</title>
+</head>
+<link rel="stylesheet" type="text/css" href="./css/shijian.css"/>
+<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="./css/public.css">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<body>
+	<!-- 公用头部 -->
+	<div class="commonHeader">
+		<a href="" class="back_last back_last2 z34">取消</a>
+		<h2 class="z34">促销</h2>
+	</div>
+	<div class="commonHeaderPlace"></div>
+	<!-- 公用头部 -->
+	
+	<div class="minWinH">
+		<div class="salesPart1 borderB clearfix">
+			<div class="salesImg fl">
+				<a href="javascript:void(0)" class="backLazys absolute" style="background-image: url(./images/mainImg.png);"></a>
+			</div>
+			<div class="salesPart1Right">
+				<h3 class="z26 saleH3">萨摩耶</h3>
+				<p class="z26 salePrice">¥ 3000.00</p>
+			</div>	
+			<div class="clear"></div>
+		</div>
+		<p class="commonBorder"></p>
+		<div class="perSonBlock">
+			<ul>
+				<li class="noArrow">
+					<a href="javascript:void(0)">
+						<span class="fl perSonBlock_span z28">促销价格</span>
+						<div class="perSonBlock_right fr">
+							<p class="z28 perSonBlock_right_p" id=""><input type="text" class="salsePriceInput" placeholder="未设置"></p>
+							<p class="perArrow"></p>
+						</div>
+						<div class="clear"></div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<p class="commonBorder"></p>
+		<div class="perSonBlock">
+			<ul>
+				<li class="noArrow">
+					<a href="javascript:void(0)">
+						<span class="fl perSonBlock_span z28">开始时间</span>
+						<div class="perSonBlock_right fr">
+							<p class="z28 perSonBlock_right_p"><input type="text" class="salsePriceInput" placeholder="点击设置" id="input1"></p>
+							<p class="perArrow"></p>
+						</div>
+						<div class="clear"></div>
+					</a>
+				</li>
+				<li class="noArrow">
+					<a href="javascript:void(0)">
+						<span class="fl perSonBlock_span z28">结束时间</span>
+						<div class="perSonBlock_right fr">
+							<p class="z28 perSonBlock_right_p"><input type="text" class="salsePriceInput" placeholder="点击设置" id="input2"></p>
+							<p class="perArrow"></p>
+						</div>
+						<div class="clear"></div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+	
+	<div class="nextStepPlace" style="height: 0.9rem;"></div>
+	<div class="nextStep">
+		<a href="" class="z30">保存</a>
+	</div>
+
+
+
+
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/jquer_shijian.js?ver=1" type="text/javascript" charset="utf-8"></script>
+<script src="js/swiper.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#input1").shijian({
+		okfun:function(e) {
+			CompareDate(e);
+		}
+	});
+	$("#input2").shijian({
+		okfun:function(e) {
+			CompareDate(e);
+		}
+	});
+
+	function CompareDate(e){
+	 var beginTime = $("#input1").val();
+	 var endTime = $("#input2").val();
+	  var isTrue = new Date(beginTime.replace(/-/g,"\/")) > new Date(endTime.replace(/-/g,"\/"));
+		if(isTrue) {
+			$(e[0]).val("");
+			alert("结束时间不能小于开始时间");
+		}
+	}
+})
+</script>
+
+</html>

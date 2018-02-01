@@ -1,13 +1,14 @@
     $(document).ready(function(){
         //移动端屏幕适配
-        document.documentElement.style.fontSize = $("html").width() / 7.5 + 'px';
-        // if(parseFloat(document.documentElement.style.fontSize) > 56) {
-        //     document.documentElement.style.fontSize = 56 + "px";
+        /*document.documentElement.style.fontSize = $("html").width() / 7.5 + 'px';
+        if(parseFloat(document.documentElement.style.fontSize) > 56) {*/
+            document.documentElement.style.fontSize = 50 + "px";
         // }
         $(window).on("change, resize",function(){
         document.documentElement.style.fontSize = $("html").width() / 7.5 + 'px';
-        // if(parseFloat(document.documentElement.style.fontSize) > 56) {
-        //     document.documentElement.style.fontSize = 56 + "px";
+         /*document.documentElement.style.fontSize = $("html").width() / 7.5 + 'px';
+        if(parseFloat(document.documentElement.style.fontSize) > 50) {*/
+            document.documentElement.style.fontSize = 50 + "px";
         // }
         });
 
@@ -46,7 +47,7 @@ function resizes(){
    if($('.fix_nav').length > 0) {
         $("body").css({'padding-bottom':$('.fix_nav').height()});
     }
-     $('.minWinH').css({"min-height":$(window).height() - parseFloat($("body").css("padding-bottom"))});
+     $('.minWinH').css({"min-height":$(window).height() - parseFloat($("body").css("padding-bottom")) - $('.commonHeader').height() - $('.nextStepPlace').height()});
 }
 
 $(function(){

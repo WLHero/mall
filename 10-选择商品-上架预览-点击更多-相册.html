@@ -1,0 +1,120 @@
+<!doctype html>
+<html data-dpr="1">
+<meta charset="utf-8">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<title>商城管理</title>
+</head>
+<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="./css/public.css">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<body>
+	<!-- 公用头部 -->
+	<div class="commonHeader">
+		<a href="javascript:history.back(-1)" class="back_last back_last2 z30">取消</a>
+		<h2 class="z34">编辑相册</h2>
+		<a href="javascript:void(0)" class="z28 commonHeaderR">完成</a>
+	</div>
+	<div class="commonHeaderPlace"></div>
+	<!-- 公用头部 -->
+
+	<div class="minWinH" style="background: #f7f7f7;">
+		<h4 class="z26 groundingH4">编辑相册（长按图片可拖拽调整顺序）</h4>
+		<div class="proAlbum editProAlbum">
+			<ul class="clearfix" id="proAlbumUl">
+				<li class="choic-one" data-yes="yes">
+					<a href="javascript:void(0)" class="backLazys" style="background-image: url(./images/ser_yl_img3.jpg);">
+						<p class="yewsOrno"></p>
+					</a>
+				</li>
+				<li class="choic-one" data-yes="yes">
+					<a href="javascript:void(0)" class="backLazys" style="background-image: url(./images/ser_yl_img3.jpg);">
+						<p class="yewsOrno"></p>
+					</a>
+				</li>
+				<li class="choic-one" data-yes="yes">
+					<a href="javascript:void(0)" class="backLazys" style="background-image: url(./images/ser_yl_img3.jpg);">
+						<p class="yewsOrno"></p>
+					</a>
+				</li>
+				<li class="choic-one" data-yes="yes">
+					<a href="javascript:void(0)" class="backLazys" style="background-image: url(./images/ser_yl_img3.jpg);">
+						<p class="yewsOrno"></p>
+					</a>
+				</li>
+				<li class="choic-one" data-yes="yes">
+					<a href="javascript:void(0)" class="backLazys" style="background-image: url(./images/ser_yl_img3.jpg);">
+						<p class="yewsOrno"></p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="nextStepPlace" style="height: 0.9rem;"></div>
+	<div class="EditAblumFix z28 clearfix">
+		<a href="javascript:void(0)" data-yes="yes" class="choicAll choic-all">
+			<span class="yewsOrno"></span>
+			全选
+		</a>
+		<span class="EditAblumFixspan z24">(已选：<span class="choicNum">0</span>）</span>
+		<a href="javascript:void(0)" class="delMenu fr"></a>
+	</div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+ 	$('.choic-all,.choic-one').on('click',function() {
+ 		var isChoicAll = $(this).hasClass('choic-all'); 
+ 		var dataYes = $(this).attr('data-yes');
+ 		if( isChoicAll ) { //判断是否是全选;
+ 			if( dataYes == "yes") {
+ 				$('.choic-one,.choic-all').attr('data-yes','no');
+ 			} else {
+ 				$('.choic-one,.choic-all').attr('data-yes','yes');
+ 			}
+ 		} else {
+ 			dataYes == "yes" ? ($(this).attr('data-yes','no').addClass('active')) : ($(this).attr('data-yes','yes').removeClass('active'));
+ 		}
+
+ 		var totalNum = $('.choic-one').length;
+ 		var choicNum = $('.choic-one[data-yes="no"]').length;
+
+ 		if(choicNum == totalNum) {
+ 			$('.choic-all,.choic-one').addClass('active');
+ 			$('.choic-all').attr('data-yes','no')
+ 		} else {
+ 			$('.choic-all').attr('data-yes','yes').removeClass('active');
+ 			if( isChoicAll ) {
+ 				$('.choic-one').removeClass('active');
+ 			} 
+ 			
+ 		}
+ 		Price();
+ 	});
+
+ 	//删除
+ 	$('.delMenu').on('click',function() {
+ 		var r = confirm("确定删除吗");
+ 		if(r == true) {
+ 			$('.choic-one[data-yes="no"]').remove();
+ 			Price();
+ 		}
+ 	})
+ 	function Price() {
+ 		var willNum = 0;
+ 		$('.choic-one[data-yes="no"]').each(function() {
+ 			willNum++;
+ 		})
+ 		$('.choicNum').html(willNum);
+ 	}
+ 	
+})
+
+</script>
+
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html data-dpr="1">
+<meta charset="utf-8">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<title>商城管理</title>
+</head>
+<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="./css/public.css">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<body>
+	<!-- 公用头部 -->
+	<div class="commonHeader">
+		<a href="javascript:history.back(-1)" class="back_last"></a>
+		<h2 class="z34">基本信息</h2>
+	</div>
+	<div class="commonHeaderPlace"></div>
+	<!-- 公用头部 -->
+
+	<div class="baseMes">
+		<form action="" class="baseMesForm">
+			<textarea placeholder="请输入商品名称" class="z26 baseMesArea"></textarea>
+			<div class="baseMesBlock">
+				 <h3 class="z26 baseMesBlockH3">上传商品图片</h3>
+				 <div class="baseFile">
+				 	<p class="baseFileAdd absolute"></p>
+				 	<p class="acceptUrl backLazys absolute"><img src=""></p>
+				 </div>
+				 <div class="z22 baseMesBlockMs">
+				 	精美商品封面让商品脱颖而出，可点击更换
+				 </div>
+			</div>
+			<div class="perSonBlock baseMesFormBot">
+				<ul>
+					<li class="">
+						<a href="javascript:void(0)">
+							<span class="fl perSonBlock_span z28">价格</span>
+							<div class="perSonBlock_right fr">
+								<input type="text" name="" class="z28 baseMesFormBotInput" placeholder="请设置商品价格">
+							</div>
+							<div class="clear"></div>
+						</a>
+					</li>
+					<li class="">
+						<a href="javascript:void(0)">
+							<span class="fl perSonBlock_span z28">库存</span>
+							<div class="perSonBlock_right fr">
+								<input type="text" name="" class="z28 baseMesFormBotInput" placeholder="请设置库存数量">
+							</div>
+							<div class="clear"></div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</form>
+	</div>
+
+
+	<div class="nextStepPlace"></div>
+	<div class="nextStep">
+		<a href="" class="z30">上架预览</a>
+	</div>
+
+	<div class="fileFix">
+		<p class="absolute shawoyy"></p>
+		<div class="fileFixInfo">
+			<form action="">
+				<div class="fileFixInfo_block fileFixInfo_block1">
+					<input type="file" accept="image/*" capture="camera" class="absolute fileCam">
+					<a href="javascript:void(0)" class="z26 absolute">拍照</a>
+				</div>
+				<div class="fileFixInfo_block fileFixInfo_block2">
+					<input type="file" accept="image/*" class="absolute fileCam">
+					<a href="javascript:void(0)" class="z26 absolute">我的相册</a>
+				</div>
+				<div class="fileFixInfo_block fileFixInfo_block3">
+					<a href="javascript:void(0)" class="z26 absolute canlePop">取消</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".fileCam").change(function(e) {
+		var file = e.target.files[0];
+		if (window.FileReader) {    
+            var reader = new FileReader();    
+            reader.readAsDataURL(file);  
+            //该事件在读取操作开始时触发
+            reader.onloadstart = function() {
+				$('.fileFix').removeClass('active').fadeOut();
+            }
+            //监听文件读取结束后事件    
+          reader.onloadend = function (e) {
+            $('.acceptUrl').css({'background-image':'url('+e.target.result+')'})   //e.target.result就是最后的路径地址
+          };    
+       } 
+	})
+
+	
+	// 出现弹出框
+	$('.baseFile').on("click",function(e) {
+		$('.fileFix').fadeIn().addClass('active');
+	})
+	// 隐藏弹出框
+	$('.shawoyy,.canlePop').on('click',function() {
+		$('.fileFix').removeClass('active').fadeOut()
+	})
+})
+</script>
+
+</html>

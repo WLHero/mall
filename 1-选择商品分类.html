@@ -1,0 +1,153 @@
+<!doctype html>
+<html data-dpr="1">
+<meta charset="utf-8">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, minimum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<title>商城管理</title>
+</head>
+<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="./css/public.css">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<body>
+	<!-- 公用头部 -->
+	<div class="commonHeader">
+		<a href="javascript:history.back(-1)" class="back_last"></a>
+		<h2 class="z34">选择商品分类</h2>
+	</div>
+	<div class="commonHeaderPlace"></div>
+	<!-- 公用头部 -->
+
+	
+	<div class="allClassic z32">
+		<span class="allClassicMenu"></span>
+		<span class="allClassicSpan">全部分类<span class="allClassicSecond"></span></span>
+	</div>
+	<div class="perSonBlock perSonBlockClassic">
+		<ul>
+			<li class="li1">
+				<a href="javascript:void(0)">
+					<span class="fl perSonBlock_span z32">母婴玩具</span>
+					<div class="perSonBlock_right fr">
+						<p class="z32 perSonBlock_right_p"></p>
+						<p class="perArrow"></p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+			<li class="li1">
+				<a href="javascript:void(0)">
+					<span class="fl perSonBlock_span z32">食品饮料</span>
+					<div class="perSonBlock_right fr">
+						<p class="z32 perSonBlock_right_p"></p>
+						<p class="perArrow"></p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+			<li class="li2">
+				<a href="javascript:void(0)">
+					<span class="fl perSonBlock_span z32">家用电器</span>
+					<div class="perSonBlock_right fr">
+						<p class="z32 perSonBlock_right_p"></p>
+						<p class="perArrow"></p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+			<li class="li3">
+				<a href="javascript:void(0)">
+					<span class="fl perSonBlock_span z32">鞋靴配件</span>
+					<div class="perSonBlock_right fr">
+						<p class="z32 perSonBlock_right_p"></p>
+						<p class="perArrow"></p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+			<li class="li4">
+				<a href="javascript:void(0)">
+					<span class="fl perSonBlock_span z32">时尚箱包</span>
+					<div class="perSonBlock_right fr">
+						<p class="z32 perSonBlock_right_p"></p>
+						<p class="perArrow"></p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+			<li class="li5">
+				<a href="javascript:void(0)">
+					<span class="fl perSonBlock_span z32">生鲜食品</span>
+					<div class="perSonBlock_right fr">
+						<p class="z32 perSonBlock_right_p"></p>
+						<p class="perArrow"></p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+			<li class="li6">
+				<a href="javascript:void(0)">
+					<span class="fl perSonBlock_span z32">手机数码</span>
+					<div class="perSonBlock_right fr">
+						<p class="z32 perSonBlock_right_p"></p>
+						<p class="perArrow"></p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+			<li class="li7">
+				<a href="javascript:void(0)">
+					<span class="fl perSonBlock_span z32">电脑办公</span>
+					<div class="perSonBlock_right fr">
+						<p class="z32 perSonBlock_right_p"></p>
+						<p class="perArrow"></p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+			<li class="li8">
+				<a href="javascript:void(0)">
+					<span class="fl perSonBlock_span z32">图像音像</span>
+					<div class="perSonBlock_right fr">
+						<p class="z32 perSonBlock_right_p"></p>
+						<p class="perArrow"></p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+			<li class="li9">
+				<a href="javascript:void(0)">
+					<span class="fl perSonBlock_span z32">汽车用品</span>
+					<div class="perSonBlock_right fr">
+						<p class="z32 perSonBlock_right_p"></p>
+						<p class="perArrow"></p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="nextStepPlace"></div>
+	<div class="nextStep">
+		<a href="" class="z30">下一步</a>
+	</div>
+
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.perSonBlockClassic').addClass('active');
+
+	$('.perSonBlockClassic li').on('click',function() {
+		var html = $(this).find('.perSonBlock_span').html();
+		$('.allClassicSecond').html(">"+html)
+	})
+
+})
+</script>
+
+</html>
